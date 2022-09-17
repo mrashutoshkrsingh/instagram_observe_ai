@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #337ab7;
+  --secondary-color: #204d74;
+  --fade-in-color: rgba(0, 0, 0, 0.1);
+}
 * {
   padding: 0;
   margin: 0;
@@ -133,5 +138,5 @@ button.btn-outline {
   border-color: rgba(0, 0, 0, 0.1);
   padding: 7px;
   border-left: 0;
-  color: #4171cf;
+  color: var(--primary-color);
 }

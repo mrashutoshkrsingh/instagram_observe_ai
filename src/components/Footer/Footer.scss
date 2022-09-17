@@ -1,0 +1,24 @@
+.footer-cont {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  background: white;
+  max-width: 443px;
+  margin: auto;
+  height: 55px;
+
+  button {
+    border: 0;
+    background-color: inherit;
+    outline: 0;
+    font-size: 25px;
+  }
+}

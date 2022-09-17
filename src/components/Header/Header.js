@@ -13,9 +13,9 @@ export default function Header({ onBack, title, onOptionsClick }) {
         )}
         <div className="header-title">{title}</div>
         {onOptionsClick && (
-          <buttion className="btn-options">
+          <button className="btn-options">
             <BiDotsHorizontal />
-          </buttion>
+          </button>
         )}
       </div>
     </div>

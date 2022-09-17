@@ -1,0 +1,120 @@
+.comments-cont {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  ::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  :-moz-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  ::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  :-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .comment-cont {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.2rem;
+    border-bottom: 1px solid grey;
+    &:nth-child(n-1) {
+      border-bottom: 0 !important;
+    }
+    .comment-col-1 {
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      //   padding: 5px 20px;
+    }
+    .comment-col-2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      .row:first-child {
+        margin-bottom: 10px;
+        word-break: break-word;
+        strong {
+          margin-right: 5px;
+        }
+      }
+      .row:nth-child(2) {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .comment-time {
+          color: gray;
+        }
+        .comment-reply-btn {
+          border: 0;
+          background-color: inherit;
+          color: gray;
+          cursor: pointer;
+        }
+      }
+    }
+    .comment-col-3 {
+      color: rgba(0, 0, 0, 0.5);
+      border: 0;
+      background-color: inherit;
+      cursor: pointer;
+      display: flex;
+      padding-top: 15px;
+      height: 50px;
+      align-items: baseline;
+    }
+  }
+  .comment-input-cont {
+    // background-color: bisque;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    max-width: 443px;
+    margin: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    .send-icon {
+      display: flex;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .comment-input {
+      flex: 1;
+      textarea {
+        width: 100%;
+        font-size: 18px;
+        border: 0;
+        background-color: inherit;
+        &:focus-visible,
+        &:focus {
+          border: 0;
+          outline: 0;
+        }
+        // margin-top: 10px;
+      }
+    }
+
+    .post-button {
+      margin-left: auto;
+      background-color: inherit;
+      border: 0;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--primary-color);
+      &:disabled {
+        color: gray;
+      }
+    }
+  }
+}

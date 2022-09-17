@@ -4,28 +4,38 @@ import { AiOutlineComment, AiOutlineSave } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import "./Post.scss";
+import { useNavigate, useParams } from "react-router-dom";
+import userTimeLineData from "../../userTimeLine.json";
 
-// BsHeart
-// AiOutlineComment
-// FiSend
-// AiOutlineSave
 export default function Post() {
+  let { postId } = useParams();
+  let navigate = useNavigate();
+
+  const post = userTimeLineData.posts.find((p) => p.id === postId);
+
+  const { dpUrl, username } = userTimeLineData;
+
   return (
     <div className="post-cont">
-      <ProfileHeader />
+      <ProfileHeader
+        postData={{
+          username: username,
+          dpUrl: dpUrl,
+          location: post.location,
+        }}
+      />
       <div className="post-img">
-        <img
-          src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
-          alt="loading.."
-          lang="lazy"
-        />
+        <img src={post.imgUrl} alt="loading.." loading="lazy" />
       </div>
       <div className="post-action-cont ">
         <div className="action-grp-sec-1">
           <button className="action-btn">
             <BsHeart size={25} />
           </button>
-          <button className="action-btn">
+          <button
+            className="action-btn"
+            onClick={() => navigate(`/posts/${postId}/comments`)}
+          >
             <AiOutlineComment size={28} />
           </button>
           <button className="action-btn">
@@ -39,11 +49,8 @@ export default function Post() {
         </div>{" "}
       </div>
       <div className="post-user-description">
-        <strong className="post-username">gopro</strong>
-        In publishing and graphic design, Lorem ipsum is a placeholder text
-        commonly used to demonstrate the visual form of a document or a typeface
-        without relying on meaningful content. Lorem ipsum may be used as a
-        placeholder before final copy is available.
+        <strong className="post-username">{username}</strong>
+        {post.description}
       </div>
     </div>
   );

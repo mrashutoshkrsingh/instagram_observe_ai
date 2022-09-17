@@ -1,5 +1,6 @@
 .user-profile-cont {
   padding-top: 50px;
+  padding-bottom: 55px;
   .user-profile-sec-1 {
     display: flex;
     gap: 21px;
@@ -76,18 +77,16 @@
     }
   }
   .posts-cont {
-    & > div {
-      display: flex;
-      flex-wrap: wrap;
-      img {
-        display: inline-block;
-        width: 33.33%;
-        transition: 0.2s linear;
-        border: 0.5px solid white;
-        &:hover {
-          transform: scale(1.04);
-          cursor: pointer;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      display: inline-block;
+      width: 33.33%;
+      transition: 0.2s linear;
+      border: 0.5px solid white;
+      &:hover {
+        transform: scale(1.04);
+        cursor: pointer;
       }
     }
   }

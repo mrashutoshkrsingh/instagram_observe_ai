@@ -8,10 +8,14 @@ import { TbGridDots } from "react-icons/tb";
 import { BsSave } from "react-icons/bs";
 import userTimeLineData from "../../userTimeLine.json";
 import PostGallery from "../../components/PostGallery/PostGallery";
+import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+
 // TbGridDots
 // IoReorderThreeOutline
 // BsSave
 export default function UserProfile() {
+  let navigate = useNavigate();
   return (
     <div className="user-profile-cont">
       <Header title="UserProfile" onBack={() => {}} onOptionsClick={() => {}} />
@@ -53,8 +57,14 @@ export default function UserProfile() {
       </div>
       {/* post/images section */}
       <div className="posts-cont">
-        <PostGallery images={userTimeLineData.posts} />
+        <PostGallery
+          images={userTimeLineData.posts}
+          onClick={(id) => {
+            navigate(`/posts/${id}`);
+          }}
+        />
       </div>
+      <Footer />
     </div>
   );
 }
