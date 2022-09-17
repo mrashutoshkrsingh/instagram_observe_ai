@@ -1,0 +1,31 @@
+.header-cont {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-weight: 600;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  max-width: 441px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #fbfbfb;
+  color: #131313;
+  button {
+    border: 0;
+    background-color: inherit;
+    outline: 0;
+  }
+  .header-root {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    justify-content: space-between;
+    padding: 0 16px;
+    width: 100%;
+  }
+}
