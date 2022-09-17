@@ -108,9 +108,26 @@ code {
   max-width: 441px;
   margin: auto;
   position: relative;
-  padding-top: 42px;
+  padding-top: 50px;
 }
 
+.px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.py-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mx-10 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 button.btn-outline {
   width: 100%;
   background: white;

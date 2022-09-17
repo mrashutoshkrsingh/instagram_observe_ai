@@ -6,6 +6,8 @@ import { GoVerified } from "react-icons/go";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { TbGridDots } from "react-icons/tb";
 import { BsSave } from "react-icons/bs";
+import userTimeLineData from "../../userTimeLine.json";
+import PostGallery from "../../components/PostGallery/PostGallery";
 // TbGridDots
 // IoReorderThreeOutline
 // BsSave
@@ -13,7 +15,7 @@ export default function UserProfile() {
   return (
     <div className="user-profile-cont">
       <Header title="UserProfile" onBack={() => {}} onOptionsClick={() => {}} />
-      <div className="user-profile-sec-1">
+      <div className="user-profile-sec-1 px-10 py-10">
         <div className="user-profile-img-cont">
           <img
             className="user-profile-img b-50"
@@ -25,29 +27,33 @@ export default function UserProfile() {
         </div>
         <FollowersContainer />
       </div>
-      <div className="user-profile-username">
+      <div className="user-profile-username px-10">
         Username
         <span className="user-verified">
           <GoVerified />
         </span>
       </div>
-      <div className="user-profile-name">Travel Company</div>
-      <div className="user-profile-description">
+      <div className="user-profile-name px-10">Travel Company</div>
+      <div className="user-profile-description px-10">
         This is a user profile description for the user profile page of the user
         profile page of the user profile page of the user profile page of the
         user profile.
       </div>
       <button className="btn-outline">Call</button>
       <div className="user-profile-tab">
+        <button className="tab-btn-item active">
+          <TbGridDots />
+        </button>
         <button className="tab-btn-item">
           <IoReorderThreeOutline />
         </button>
         <button className="tab-btn-item">
-          <TbGridDots />
-        </button>
-        <button className="tab-btn-item">
           <BsSave />
         </button>
+      </div>
+      {/* post/images section */}
+      <div className="posts-cont">
+        <PostGallery images={userTimeLineData.posts} />
       </div>
     </div>
   );

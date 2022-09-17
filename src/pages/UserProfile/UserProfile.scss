@@ -3,11 +3,13 @@
     display: flex;
     gap: 21px;
     align-items: center;
-    padding: 10px;
     .user-profile-img-cont {
       flex-basis: 100px;
       display: flex;
       align-items: center;
+      img {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
     }
     .followers-cont {
       flex: 1;
@@ -47,13 +49,15 @@
     margin-top: 15px;
     font-weight: 600;
     font-size: 17px;
+    font-family: sans-serif;
   }
   .user-profile-name {
     color: grey;
   }
   .user-profile-description {
     margin-bottom: 10px;
-    line-height: 1.2rem;
+    line-height: 1.3rem;
+    margin-top: 10px;
   }
   .user-profile-tab {
     display: flex;
@@ -65,6 +69,25 @@
       font-size: 20px;
       text-align: center;
       padding: 10px;
+      &.active {
+        color: #337ab7;
+      }
+    }
+  }
+  .posts-cont {
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+      img {
+        display: inline-block;
+        width: 33.33%;
+        transition: 0.2s linear;
+        border: 0.5px solid white;
+        &:hover {
+          transform: scale(1.04);
+          cursor: pointer;
+        }
+      }
     }
   }
 }
