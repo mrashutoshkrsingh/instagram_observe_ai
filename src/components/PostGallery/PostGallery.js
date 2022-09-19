@@ -19,6 +19,5 @@ const Gallery = ({ images, scrollPosition, onClick }) => (
     ))}
   </>
 );
-// Wrap Gallery with trackWindowScroll HOC so it receives
-// a scrollPosition prop to pass down to the images
+
 export default trackWindowScroll(Gallery);

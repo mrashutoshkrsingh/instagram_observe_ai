@@ -21,6 +21,7 @@
         {
           "id": "1231",
           "text": "So nice",
+          "isCustom": true,
           "createdBy": {
             "name": "lucitacris",
             "dpUrl": "https://think360studio-media.s3.ap-south-1.amazonaws.com/download/india-flag-2021-wallpaper-1.png"
@@ -319,26 +320,13 @@
         },
         {
           "id": "1244",
-          "text": "So ksad kdnd wkdwd wdkw dkwdwqkdwndnw kdsndknnice",
+          "text": "Comments are not nested",
           "createdBy": {
             "name": "lucitacris",
             "dpUrl": "https://think360studio-media.s3.ap-south-1.amazonaws.com/download/india-flag-2021-wallpaper-1.png"
           },
           "createdAt": "Sat Sep 17 2022 11:20:24 GMT+0530 (India Standard Time)",
-          "likesCount": 0,
-          "children": [
-            {
-              "id": "123455",
-              "parentId": "1244",
-              "text": "It's so important that you have this child and that you have this parent",
-              "createdBy": {
-                "name": "ldsddjv",
-                "dpUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
-              },
-              "createdAt": "Sat Sep 17 2022 12:23:24 GMT+0530 (India Standard Time)",
-              "likesCount": 0
-            }
-          ]
+          "likesCount": 0
         }
       ]
     },

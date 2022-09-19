@@ -10,13 +10,17 @@ function SummaryItem({ title, subTitle }) {
   );
 }
 
-export default function FollowersContainer() {
+export default function FollowersContainer({
+  postsCount,
+  followersCount,
+  followingsCount,
+}) {
   return (
     <div className="followers-cont">
       <div className="prof-summary">
-        <SummaryItem title={438} subTitle="posts" />
-        <SummaryItem title={"133K"} subTitle="followers" />
-        <SummaryItem title={629} subTitle="following" />
+        <SummaryItem title={postsCount} subTitle="posts" />
+        <SummaryItem title={followersCount} subTitle="followers" />
+        <SummaryItem title={followingsCount} subTitle="following" />
       </div>
       <div className="follow-action-button-cont">
         <button className=" btn btn-primary">Follow</button>

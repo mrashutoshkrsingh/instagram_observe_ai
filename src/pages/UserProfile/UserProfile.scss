@@ -10,7 +10,8 @@
       display: flex;
       align-items: center;
       img {
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--bs-gray-200);
+        object-fit: cover;
       }
     }
     .followers-cont {
@@ -25,19 +26,19 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-bottom: 10px;
+          margin-bottom: 0.625rem;
           .summary-item-title {
           }
           .summary-item-subTitle {
-            color: #9b9b9c;
-            font-size: 15px;
+            color: var(--bs-gray-500);
+            font-size: 0.938rem;
           }
         }
       }
       .follow-action-button-cont {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0.625rem;
         .btn:first-child {
           flex: 1;
         }
@@ -47,19 +48,23 @@
   .user-profile-username {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    margin-top: 15px;
-    font-weight: 600;
+    gap: 0.625rem;
+    margin-top: 0.938rem;
+    font-weight: 500;
     font-size: 17px;
-    font-family: sans-serif;
+    color: var(--bs-dark);
+    .user-verified {
+      color: var(--bs-primary);
+    }
   }
   .user-profile-name {
-    color: grey;
+    color: var(--bs-gray);
   }
   .user-profile-description {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     line-height: 1.3rem;
-    margin-top: 10px;
+    margin-top: 0.625rem;
+    color: var(--bs-gray-dark);
   }
   .user-profile-tab {
     display: flex;
@@ -68,11 +73,11 @@
       background: none;
       border: 0;
       outline: 0;
-      font-size: 20px;
+      font-size: 1.25rem;
       text-align: center;
-      padding: 10px;
+      padding: 0.625rem;
       &.active {
-        color: #337ab7;
+        color: var(--bs-primary);
       }
     }
   }
@@ -83,7 +88,8 @@
       display: inline-block;
       width: 33.33%;
       transition: 0.2s linear;
-      border: 0.5px solid white;
+      object-fit: cover;
+      border: 0.5px solid var(--bs-body-bg);
       &:hover {
         transform: scale(1.04);
         cursor: pointer;

@@ -5,15 +5,24 @@ import { BsHeart } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import "./Post.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import userTimeLineData from "../../userTimeLine.json";
+import {
+  getPostById,
+  getPostCommentsByPostId,
+} from "../../services/postService";
+import { getTimeLineUser } from "../../services/userService";
+import CommentItem from "../../components/CommentItem/CommentItem";
 
 export default function Post() {
   let { postId } = useParams();
   let navigate = useNavigate();
 
-  const post = userTimeLineData.posts.find((p) => p.id === postId);
+  const post = getPostById(postId);
 
-  const { dpUrl, username } = userTimeLineData;
+  const { dpUrl, username } = getTimeLineUser();
+
+  const customComments = getPostCommentsByPostId(postId, true);
+
+  console.log("custom comments", customComments);
 
   return (
     <div className="post-cont">
@@ -48,9 +57,15 @@ export default function Post() {
           </button>
         </div>{" "}
       </div>
+      <div className="post-likes">{post.totalLikes} likes</div>
       <div className="post-user-description">
         <strong className="post-username">{username}</strong>
         {post.description}
+      </div>
+      <div className="post-comments-cont">
+        {customComments.map((comment) => (
+          <CommentItem comment={comment} isCustom={true} />
+        ))}
       </div>
     </div>
   );

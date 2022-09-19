@@ -1,9 +1,9 @@
 .footer-cont {
-  padding: 10px;
+  padding: 0.625rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--bs-gray-200);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -11,10 +11,9 @@
   width: 100%;
   z-index: 100;
   background: white;
-  max-width: 443px;
+  max-width: var(max-width-mobile);
   margin: auto;
   height: 55px;
-
   button {
     border: 0;
     background-color: inherit;

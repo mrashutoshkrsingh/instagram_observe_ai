@@ -1,0 +1,47 @@
+.comment-input-cont {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0.625rem;
+  padding: 1.25rem;
+  max-width: 443px;
+  margin: auto;
+  border-top: 1px solid var(--bs-gray-200);
+  .send-icon {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .reply-to {
+    font-size: 14px;
+  }
+  .comment-input {
+    flex: 1;
+    textarea {
+      width: 100%;
+      font-size: 18px;
+      border: 0;
+      background-color: inherit;
+      &:focus-visible,
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+  }
+
+  .post-button {
+    margin-left: auto;
+    background-color: inherit;
+    border: 0;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--primary-color);
+    &:disabled {
+      color: gray;
+    }
+  }
+}

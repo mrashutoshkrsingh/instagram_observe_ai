@@ -6,16 +6,26 @@ import { GoVerified } from "react-icons/go";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { TbGridDots } from "react-icons/tb";
 import { BsSave } from "react-icons/bs";
-import userTimeLineData from "../../userTimeLine.json";
 import PostGallery from "../../components/PostGallery/PostGallery";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import { getPosts } from "../../services/postService";
+import { getTimeLineUser } from "../../services/userService";
 
-// TbGridDots
-// IoReorderThreeOutline
-// BsSave
 export default function UserProfile() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const posts = getPosts();
+  const {
+    username,
+    isVerified,
+    name,
+    mobile,
+    postsCount,
+    followersCount,
+    followingsCount,
+    dpUrl,
+  } = getTimeLineUser();
+
   return (
     <div className="user-profile-cont">
       <Header title="UserProfile" onBack={() => {}} onOptionsClick={() => {}} />
@@ -23,27 +33,33 @@ export default function UserProfile() {
         <div className="user-profile-img-cont">
           <img
             className="user-profile-img b-50"
-            src="https://think360studio-media.s3.ap-south-1.amazonaws.com/download/india-flag-2021-wallpaper-1.png"
-            alt="username"
+            src={dpUrl}
+            alt={username}
             width={70}
             height={70}
           />
         </div>
-        <FollowersContainer />
+        <FollowersContainer
+          postsCount={postsCount}
+          followersCount={followersCount}
+          followingsCount={followingsCount}
+        />
       </div>
       <div className="user-profile-username px-10">
-        Username
-        <span className="user-verified">
-          <GoVerified />
-        </span>
+        {username}
+        {isVerified && (
+          <span className="user-verified">
+            <GoVerified />
+          </span>
+        )}
       </div>
-      <div className="user-profile-name px-10">Travel Company</div>
+      <div className="user-profile-name px-10">{name}</div>
       <div className="user-profile-description px-10">
         This is a user profile description for the user profile page of the user
         profile page of the user profile page of the user profile page of the
         user profile.
       </div>
-      <button className="btn-outline">Call</button>
+      {mobile && <button className="btn-outline">Call</button>}
       <div className="user-profile-tab">
         <button className="tab-btn-item active">
           <TbGridDots />
@@ -55,10 +71,9 @@ export default function UserProfile() {
           <BsSave />
         </button>
       </div>
-      {/* post/images section */}
       <div className="posts-cont">
         <PostGallery
-          images={userTimeLineData.posts}
+          images={posts}
           onClick={(id) => {
             navigate(`/posts/${id}`);
           }}
