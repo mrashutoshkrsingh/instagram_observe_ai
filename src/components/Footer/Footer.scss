@@ -10,8 +10,8 @@
   right: 0;
   width: 100%;
   z-index: 100;
-  background: white;
-  max-width: var(max-width-mobile);
+  background: var(--bs-body-bg);
+  max-width: var(--max-width-mobile);
   margin: auto;
   height: 55px;
   button {

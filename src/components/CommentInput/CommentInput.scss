@@ -13,7 +13,7 @@
   .send-icon {
     display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--bs-gray-600);
   }
   .reply-to {
     font-size: 14px;
@@ -39,7 +39,7 @@
     border: 0;
     font-size: 19px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--bs-primary);
     &:disabled {
       color: gray;
     }

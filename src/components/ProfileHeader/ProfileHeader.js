@@ -5,7 +5,7 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 export default function ProfileHeader({ postData }) {
   const { username, dpUrl, location } = postData;
   return (
-    <div className="profile-header-cont">
+    <header className="profile-header-cont">
       <div className="profile-header-img">
         <img
           src={dpUrl}
@@ -22,6 +22,6 @@ export default function ProfileHeader({ postData }) {
       <div className="profile-option">
         <BiDotsVerticalRounded size={24} />
       </div>
-    </div>
+    </header>
   );
 }

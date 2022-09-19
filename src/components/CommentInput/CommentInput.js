@@ -1,14 +1,16 @@
-import React from "react";
+import React, { memo } from "react";
 import "./CommentInput.scss";
 import { FiSend } from "react-icons/fi";
 import TextareaAutosize from "react-textarea-autosize";
+import "./CommentInput.scss";
 
-export default function CommentInput({
+export default memo(function CommentInput({
   textAreaRef,
   inputText,
   handleAddComment,
   handleChangeInputText,
 }) {
+  console.log("Input text", inputText);
   return (
     <form className="comment-input-cont">
       <div className="send-icon">
@@ -41,4 +43,4 @@ export default function CommentInput({
       </button>
     </form>
   );
-}
+});

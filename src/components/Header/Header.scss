@@ -10,9 +10,8 @@
   top: 0;
   z-index: 1;
   max-width: 441px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #fbfbfb;
-  color: #131313;
+  border-bottom: 1px solid var(--bs-gray-200);
+  background-color: var(--bs-body-bg);
   button {
     border: 0;
     background-color: inherit;
@@ -25,7 +24,7 @@
     flex-direction: row;
     height: 42px;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 15px;
     width: 100%;
   }
 }
